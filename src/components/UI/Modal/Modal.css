@@ -1,0 +1,43 @@
+.Modal {
+    position: fixed;
+    z-index: 500;
+    background-color: white;
+    width: 95%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 1.4rem;
+    left: 15%;
+    top: 8%;
+    box-sizing: border-box;
+     overflow: auto; 
+    transition: all 0.3s ease-out;
+    height: 100vh;
+    top:1.4rem;
+    left: calc(60% - 35rem);
+
+
+}
+.Modal button{
+    /* text-align: center;
+    justify-items: center;
+    justify-content: center;
+    justify-self: center;
+    justify-items: space-evenly; */
+    padding: 2rem 10rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+    .Modal {
+        width: 70rem;
+        height: 100vh;
+        left: calc(50% - 35rem);
+        margin-bottom: 1rem;
+        -webkit-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        overflow: auto;
+
+
+    }
+}

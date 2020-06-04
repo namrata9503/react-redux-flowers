@@ -1,0 +1,15 @@
+.Checkout{
+    background-image: url(../../assets/images/lady3.jfif);
+    /* background-size: cover; */
+    height: 85%;
+    background-repeat: no-repeat;
+    background-position: 51% 41%;
+}
+
+@media only screen and (max-width: 950px) {
+    .Checkout{
+        background-image:none;
+        
+    }
+
+}

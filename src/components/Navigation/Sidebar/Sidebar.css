@@ -1,0 +1,84 @@
+.Sidebar{
+    position: fixed;
+    width: 28rem;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: #fff;
+    /* padding: 3.2rem 1.6rem; */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+
+
+}
+.sidenav{
+    font-size: 3.8rem;
+    list-style: none;
+}
+.sidenav:last-child{
+    position: relative;
+   
+}
+.sidenav:last-child li{
+margin: 0;
+}
+
+.sidenav:last-child a{
+   
+padding: 1.2rem; 
+color: #c69963;  
+}
+
+.sidenav:last-child a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scale(0);
+    transition: transform .2s, width .4s cubic-bezier(1, 0, 0, 1) .2s, background-color .1s;
+    
+}
+.sidenav:last-child a:hover::before,
+.sidenav:last-child a:active::before {
+    transform: scaleY(1);
+    width: 100%;
+}
+.sidenav:last-child a:active, .sidenav:last-child a.active
+{
+   
+    padding: 1.2rem; 
+    color: whitesmoke;  
+
+    }
+    
+@media(min-width:500px){
+    .Sidebar{
+        display: none;
+    }
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(-100%);
+}
+
+.Logo {
+    height: 31%;
+    width: 41%;
+    margin-bottom: 1.2rem;
+    background-color: white;
+    justify-self: center;
+    margin: 0 auto;
+}
+.Logo img{
+    height: 100%;
+    width: 10rem;
+}

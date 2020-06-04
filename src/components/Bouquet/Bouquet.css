@@ -1,0 +1,15 @@
+.flowers{
+    grid-column: center-start / center-end;
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+    
+}
+.select{
+    grid-column: 1/-1;
+    width: 80%;
+    text-align: center;
+    justify-self: center;
+    font-size: 3rem;
+}

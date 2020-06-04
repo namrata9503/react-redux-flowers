@@ -1,0 +1,308 @@
+
+
+.flowers{
+    grid-column: center-start / center-end;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+
+}
+.flower{
+    /* width: 100%;
+    background-size: cover;
+    height: 20rem;
+    z-index: 1; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2.5rem;
+    background-color: #f9f7f6;
+
+
+}
+
+
+.FlowerVariety{
+    /* display: flex; */
+    /* justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    border: 1px solid #333; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 1.5rem;
+    background-color: #f9f7f6;
+    transition: all .9s;
+    border-radius: 4px;
+    overflow: hidden;
+
+}
+
+.FlowerVariety:hover {
+    /* box-shadow: 0 0 5px 1px rgba(51,51,51,.4); */
+    cursor: pointer;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+.Picture{
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+
+
+}
+.Label {
+    
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: all .9s;
+
+    z-index: 1;
+    background-size: cover;
+    overflow: hidden;
+    transition: .6s ease-in-out;
+
+}
+.FlowerVariety:hover .Picture .Label{
+    transform: scale(1.1);
+}
+.name{
+    grid-column: 1/-1;
+    width: 80%;
+    justify-self: center;
+    transform: translateY(.5rem);
+    z-index: 2;
+    font-family: 'El Messiri', sans-serif;
+    border-radius: 10rem;
+   
+    font-size: 2.2rem;
+    padding: 1.25rem;
+    text-align: center;
+    background-color: #54483A;
+    color: #fff;
+    font-weight: 400;
+    transition: .3s ease-in-out;
+
+
+}
+.blink{
+    animation: blinker 2s linear infinite;
+
+}
+@keyframes blinker {  
+    50% { 
+        opacity: 0;
+        color: rgb(248, 225, 12);
+     }
+  }
+.name:hover, .blink:hover, .FlowerVariety:hover .blink{
+    color: rgb(248, 225, 12);
+    animation: none;
+}
+
+  
+ 
+
+.count {
+    
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    
+        justify-self: center;
+        align-self: center;
+       
+       
+        padding: 1rem 2.5rem;
+        text-align: center;
+       
+        font-weight: 900;
+        border-radius: 5px;
+        background-color: #fff;
+        /* border: 2px solid rgb(248, 244, 7); */
+        box-shadow: 0 1rem 2rem rgba(243, 210, 169, 0.5);
+
+
+        -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 10;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    font-family: Volte-Rounded-Semibold;
+    border-radius: 8px;
+    color: #fff;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+
+        /* transform: translateY(0px); */
+
+
+    /* display: flex;
+    align-items: center; */
+    
+}
+.count:active, .count:focus,
+.pcount:active, .pcount:focus,
+.pcount span:active, .pcount span:focus{
+    background-color: red;
+}
+.pcount{
+    color: #99703F;
+    font-family: 'El Messiri', sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 10;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    transition: all .9s;
+    align-self: center;
+
+}
+.pcount span{
+    opacity: 1;
+    transform: translateY(0px);
+        background-color: #fff;
+        width: 46px;
+        height: 46px;
+        border-radius: 4px;
+        color: #AA6817;
+        font-size: 1.9rem;
+        padding: 10px;
+    
+    
+}
+.price {
+    width: 50%;
+    
+    grid-column: 1/-1;
+    /* background-color: #f0e1d0; */
+     
+        justify-self: center;
+        /* transform: translateY(-11rem); */
+        grid-row: 5/6;
+       
+        font-size: 1.6rem;
+        padding: 1.25rem;
+        text-align: center;
+       
+        font-weight: 400;
+        margin-bottom: 2rem;
+    /* display: flex;
+    align-items: center; */
+    
+}
+.pprice{
+    font-size: 2rem;
+    font-family: 'El Messiri', sans-serif;
+    color:#99703F;
+    text-shadow: .5rem 1rem 1em rgba(255, 146, 12, 0.5);
+    font-weight: 900;
+    font-style: italic;
+
+
+}
+.btn {
+    grid-column: 1/-1;
+    border-radius: 0;
+    background-color: #c69963;
+    color: #333;
+    border: none;
+    font-size: 1.5rem;
+    padding: 1.8rem 3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .2s;
+}
+.btn:hover{
+    background-color: #6D5D4B;
+    color: #fff;
+
+}
+
+
+
+
+
+/* .img__1{
+    background-image: url(../../../assets/images/david-t-ccY4ElLlhMY-unsplash.jpg);
+
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    z-index: 1;
+    height: 25rem;
+    background-size: cover;
+}
+.img__2{
+    background-image: url(../../../assets/images/mark-james-DcClxZQrNo4-unsplash.jpg);
+
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    z-index: 1;
+    height: 25rem;
+    background-size: cover;
+}
+.img__3{
+    background-image: url(../../../assets/images/fanny-cote-diAUSrGdnT8-unsplash.jpg);
+
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    z-index: 1;
+    height: 25rem;
+    background-size: cover;
+}
+.img__4{
+    background-image: url(../../../assets/images/ivan-jevtic-p7mo8-CG5Gs-unsplash.jpg);
+
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    z-index: 1;
+    height: 25rem;
+    background-size: cover;
+}
+.img__5{
+    background-image: url(../../../assets/images/michalis-mantelos-M-cLz_qU5Jg-unsplash.jpg);
+
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    z-index: 1;
+    height: 25rem;
+    background-size: cover;
+}
+.img__6{
+    background-image: url(../../../assets/images/quino-al-BlMj6RYy3c0-unsplash.jpg);
+
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    z-index: 1;
+    height: 25rem;
+    background-size: cover;
+} */

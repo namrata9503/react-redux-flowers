@@ -1,0 +1,38 @@
+.Heading{
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.text{
+    font-size: 1.6rem;
+}
+.List{
+    list-style: none;
+    margin: 2rem auto;
+    padding: 1.8rem 5rem;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+.List li{
+    flex: 0 0 50%;
+        margin-bottom: .7rem;
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        color: maroon;
+}
+.List li::before{
+    content: "";
+        display: inline-block;
+        margin-right: .7rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-image: url(../../../assets/images/list.jfif);
+        background-size: cover;
+}
+.Center{
+    text-align: center;
+    justify-content: center;
+}

@@ -1,0 +1,57 @@
+.FlowerControl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.FlowerControl button{
+    display: block;
+    font: inherit;
+    padding: 5px;
+    margin: 0 5px;
+    width: 80px;
+    border: 1px solid #AA6817;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.FlowerControl button:disabled {
+    background-color: #AC9980;
+    border: 1px solid #7E7365;
+    color: #ccc;
+    cursor: default;
+}
+
+.FlowerControl button:hover:disabled {
+    background-color: #AC9980;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.Label {
+    padding: 10px;
+    font-weight: bold;
+    width: 80px;
+}
+
+.FlowerControl .Less {  
+    background-color: #D39952;
+    color: white;
+}
+
+.FlowerControl .More {
+    background-color: #8F5E1E;
+    color: white;
+}
+
+.FlowerControl .Less:hover, .FlowerControl .Less:active {  
+    background-color: #DAA972;
+    color: white;
+}
+
+.FlowerControl .More:hover,.FlowerControl .More:active {
+    background-color: #99703F;
+    color: white;
+}
