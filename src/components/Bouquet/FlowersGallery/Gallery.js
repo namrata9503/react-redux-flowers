@@ -31,55 +31,55 @@ class Gallery extends Component {
 
                 <div className={classes.Gallery}>
                     <div className={classes.Item1}>
-                        <img src={Picture1} alt="Gallery image 11" className={classes.Picture} />
+                        <img src={Picture1} alt="Gallery 11" className={classes.Picture} />
                     </div>
                     <div className={classes.Item2}>
-                        <img src={Picture2} alt="Gallery image 12" className={classes.Picture} />
+                        <img src={Picture2} alt="Gallery 12" className={classes.Picture} />
                     </div>
                     <div className={classes.Item3}>
-                        <img src={Picture3} alt="Gallery image 13" className={classes.Picture} />
+                        <img src={Picture3} alt="Gallery 13" className={classes.Picture} />
                     </div>
                     <div className={classes.Item4}>
-                        <img src={Picture7} alt="Gallery image 14" className={classes.Picture} />
+                        <img src={Picture7} alt="Gallery 14" className={classes.Picture} />
                     </div>
                     <div className={classes.Item5}>
-                        <img src={Picture5} alt="Gallery image 15" className={classes.Picture} />
+                        <img src={Picture5} alt="Gallery 15" className={classes.Picture} />
                     </div>
                     <div className={classes.Item6}>
-                        <img src={Picture6} alt="Gallery image 16" className={classes.Picture} />
+                        <img src={Picture6} alt="Gallery 16" className={classes.Picture} />
                     </div>
                     <div className={classes.Item7}>
-                        <img src={Picture4} alt="Gallery image 17" className={classes.Picture} />
+                        <img src={Picture4} alt="Gallery 17" className={classes.Picture} />
                     </div>
                     <div className={classes.Item8}>
-                        <img src={Picture8} alt="Gallery image 18" className={classes.Picture} />
+                        <img src={Picture8} alt="Gallery 18" className={classes.Picture} />
                     </div>
                     <div className={classes.Item9}>
-                        <img src={Picture9} alt="Gallery image 19" className={classes.Picture} />
+                        <img src={Picture9} alt="Gallery 19" className={classes.Picture} />
                     </div>
                     <div className={classes.Item10}>
-                        <img src={Picture10} alt="Gallery image 110" className={classes.Picture} />
+                        <img src={Picture10} alt="Gallery 110" className={classes.Picture} />
                     </div>
                     <div className={classes.Item11}>
-                        <img src={Picture11} alt="Gallery image 111" className={classes.Picture} />
+                        <img src={Picture11} alt="Gallery 111" className={classes.Picture} />
                     </div>
                     <div className={classes.Item12}>
-                        <img src={Picture12} alt="Gallery image 112" className={classes.Picture} />
+                        <img src={Picture12} alt="Gallery 112" className={classes.Picture} />
                     </div>
                     <div className={classes.Item13}>
-                        <img src={Picture13} alt="Gallery image 113" className={classes.Picture} />
+                        <img src={Picture13} alt="Gallery 113" className={classes.Picture} />
                     </div>
                     <div className={classes.Item14}>
-                        <img src={Picture14} alt="Gallery image 114" className={classes.Picture} />
+                        <img src={Picture14} alt="Gallery 114" className={classes.Picture} />
                     </div>
                     <div className={classes.Item15}>
-                        <img src={Picture15} alt="Gallery image 115" className={classes.Picture} />
+                        <img src={Picture15} alt="Gallery 115" className={classes.Picture} />
                     </div>
                     <div className={classes.Item16}>
-                        <img src={Picture16} alt="Gallery image 116" className={classes.Picture} />
+                        <img src={Picture16} alt="Gallery 116" className={classes.Picture} />
                     </div>
                     <div className={classes.Item17}>
-                        <img src={Picture17} alt="Gallery image 117" className={classes.Picture} />
+                        <img src={Picture17} alt="Gallery 117" className={classes.Picture} />
                     </div>
 
 

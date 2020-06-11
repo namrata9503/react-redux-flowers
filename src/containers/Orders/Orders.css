@@ -1,22 +1,22 @@
 .Orders{
     margin-top: 2rem;
     text-align: center;
-    background-image: url(../../assets/images/orders.jpg);
+    background-image: url(../../assets/images/pink.jpeg);
     background-size: cover;
     width: 100%;
 }
 .Heading{
-    font-size: 3.1rem;
+    font-size: 5.1rem;
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 1px;
-    background-image: linear-gradient(to left, #5a5050, #b88820);
+    background-image: linear-gradient(to left, #4d2704, #ebbf60);
     display: inline-block;
     -webkit-background-clip: text;
     color: transparent;
     transition: all .2s;
     margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 .Heading:hover{
     transform: skewX(15deg) skewY(-2deg) scale(1.2);

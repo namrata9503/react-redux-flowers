@@ -1,14 +1,19 @@
 .CheckoutSummery{
     width: 100%;
-    margin: auto;
+    margin: 4rem auto;
     display: grid;
-    grid-column: center-start / center-end;
-    grid-row: 2/-1;
+    /* grid-column: center-start / center-end; */
+    grid-row: 1/2;
+    text-align: center;
    
-
-  
+    background-image: url(../../../assets/images/lady3.jfif);
+   
+    background-repeat: no-repeat;
+    background-position: 85% 54%;
+    
 }
 .Heading{
+    grid-row: 1/2;
     font-size: 3.1rem;
     text-transform: uppercase;
     font-weight: 900;
@@ -26,10 +31,12 @@
     text-shadow: .5rem 1rem 2rem rgba(#4e3706, 0.8);
 }
 .ContainerBtn{
+    grid-row: 2/3;
     display: flex;
     justify-self: center;
  
 }
+
 .CheckoutSummery Button{
    border: 1px solid #4e3706;
    border-radius: 5px;
@@ -42,19 +49,20 @@
     }
 } */
 .Items{
+    grid-row: 3/4;
     /* font-size: 2.3rem;
     font-weight: 900;
     text-transform: capitalize;
     border: 1px solid #4e3706;
     border-radius: 10rem;
     padding: 0.5rem; */
-    margin: 50rem 0;
+ 
     /* display: inline-block;
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); */
     /* width: 50rem; */
-    position: relative;
+    /* position: relative; */
     /* border: 2px dotted #000000;
     border-radius: 30%; */
     
@@ -62,6 +70,7 @@
     top: 85%;
     left: 40%;
     transform: translate(-50%, -50%); */
+    /* height: 175vh; */
    
 }
 
@@ -74,9 +83,9 @@
     background-color: transparent;
     display: grid;
     grid-row-gap: 0rem;
-    position: absolute;
-    left: calc(44% - 25px);
-    top: calc(50% - 25px);
+    /* position: absolute; */
+    /* left: calc(44% - 25px);
+    top: calc(50% - 25px); */
     /* height: 50px;
     width: 50px; */
     border: 2px dotted #754507;
@@ -85,34 +94,38 @@
 
 
 }
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 850px) {
     .CheckoutSummery{
         width: 100%;
         margin: auto;
         display: grid;
         grid-column: center-start / center-end;
-        /* grid-row: 2/-1; */
+        grid-row: 1/2;
        
     
       
     }
     .Items{
+        grid-row: 3/4;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
                 grid-gap: 7rem;
                 margin: 5rem 0;
-
-
-    }
+height: 175vh;
+}
     .CheckoutSummery .Items > *{
-        width: 18rem;
-        
+        width: 15rem;
+    
+        margin: 1rem;
+        padding: 0;
         background-color: transparent;
-        /* display: grid;
-        grid-row-gap: 0rem; */
+        display: grid;
+        grid-row-gap: 0rem;
         /* position: absolute; */
-        /* left: calc(44% - 25px); */
-        /* top: calc(26% - 25px); */
+        /* left: calc(44% - 25px);
+        top: calc(50% - 25px); */
+        /* height: 50px;
+        width: 50px; */
         border: 2px dotted #754507;
         border-radius: 50%;
         position: static;
@@ -120,87 +133,58 @@
     }
  
 }
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 850px) {
 
 
     .CheckoutSummery .Items> *:nth-child(1){
-    transform: rotate(-30deg) translateX(270px);
-
-
+    transform:rotate(14deg) translateX(50px) translateY(0px);
 }
 .CheckoutSummery .Items> *:nth-child(2){
-    transform: rotate(-14deg) translateX(450px) rotateZ(-23deg);
-
-
+    transform:rotate(-2deg) translateX(200px) translateY(-20px);
 }
 .CheckoutSummery .Items> *:nth-child(3){
-    transform: rotate(4deg) translateX(270px);
-
-
-}.CheckoutSummery .Items> *:nth-child(4){
-    transform: rotate(-39deg) translateX(450px);
-
-
-}.CheckoutSummery .Items> *:nth-child(5){
-    transform: rotate(38deg) translateX(270px);
-
-
+    transform:rotate(-7deg) translateX(400px) translateY(-259px);
+}
+.CheckoutSummery .Items> *:nth-child(4){
+    transform:rotate(14deg) translateX(-28px) translateY(-221px);
+}
+.CheckoutSummery .Items> *:nth-child(5){
+    transform:rotate(-1deg) translateX(220px) translateY(-270px);
 }
 .CheckoutSummery .Items> *:nth-child(6){
-    transform: rotate(-62deg) translateX(450px) rotateZ(32deg);
-
-
+    transform: rotate(-16deg) translateX(522px) translateY(-423px);
 }
 .CheckoutSummery .Items> *:nth-child(7){
-    transform: rotate(72deg) translateX(270px) rotateZ(-56deg);
-
-
+    transform:rotate(10deg) translateX(-73px) translateY(-475px);
 }
 .CheckoutSummery .Items> *:nth-child(8){
-    transform: rotate(-92deg) translateX(450px) rotateZ(90deg);
-
-
+    transform:rotate(3deg) translateX(195px) translateY(-538px);
 }
 .CheckoutSummery .Items> *:nth-child(9){
-    transform: rotate(106deg) translateX(270px) rotateZ(-137deg);
-
-
+    transform:rotate(-15deg) translateX(611px) translateY(-673px);
 }
 .CheckoutSummery .Items> *:nth-child(10){
-    transform: rotate(238deg) translateX(450px) rotateZ(149deg);
-
-
+    transform:rotate(23deg) translateX(-278px) translateY(-675px);
 }
 .CheckoutSummery .Items> *:nth-child(11){
-    transform: rotate(140deg) translateX(270px) rotateZ(191deg);
-
-
+    transform:rotate(-2deg) translateX(253px) translateY(-775px);
 }
 .CheckoutSummery .Items> *:nth-child(12){
-    transform: rotate(215deg) translateX(450px) rotateZ(179deg);
-
-
+    transform:rotate(-25deg) translateX(832px) translateY(-796px);
 }
 .CheckoutSummery .Items> *:nth-child(13){
-    transform: rotate(174deg) translateX(270px) rotateZ(177deg);
-
-
+    transform:rotate(23deg) translateX(-380px) translateY(-935px);
 }
 .CheckoutSummery .Items> *:nth-child(14){
-    transform: rotate(192deg) translateX(450px) rotateZ(191deg);
-
-
+    transform:rotate(4deg) translateX(139px) translateY(-1064px);
 }
 .CheckoutSummery .Items> *:nth-child(15){
-    transform: rotate(208deg) translateX(270px) rotateZ(176deg);
-
-
+    transform:rotate(-22deg) translateX(912px) translateY(-1069px);
 }
-
 }
-.CheckoutSummery .Items> *:hover {
+/* .CheckoutSummery .Items> *:hover {
   transform: none;
-}
+} */
 .CheckoutSummery .Items > *  div img {
     grid-row: 1/3;
      border-radius: 50%;

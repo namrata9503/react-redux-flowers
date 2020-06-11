@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FlowerVariety from '../FlowerVarieties/FlowerVariety/FlowerVariety';
 import classes from './FlowerVarieties.css';
-import Number from '../FlowerVarieties/FlowerVariety/Number';
 import getData from '../../Bouquet/data';
 import Aux from '../../../hoc/Auxiliary';
 
@@ -29,7 +27,6 @@ class FlowerVarieties extends Component {
     }
 
     render() {
-        console.log('flower Varieties name', this.props.name);
 
 
         return (

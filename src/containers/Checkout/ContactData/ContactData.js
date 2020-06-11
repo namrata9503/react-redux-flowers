@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { checkValidity } from '../../../shared/validation';
 import Button from '../../../components/UI/Button/Button';
 import classes from './ContactData.css';
 import axios from '../../../axios-orders';
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
+import * as orderActions from '../../../store/actions/index';
 
 
 class ContactData extends Component {
@@ -23,7 +25,7 @@ class ContactData extends Component {
                     required: true
                 },
                 valid: false,
-                touched:false
+                touched: false
             },
 
             zipcode: {
@@ -39,7 +41,7 @@ class ContactData extends Component {
                     maxLength: 5
                 },
                 valid: false,
-                touched:false
+                touched: false
             },
             street: {
                 elementType: 'input',
@@ -52,7 +54,7 @@ class ContactData extends Component {
                     required: true
                 },
                 valid: false,
-                touched:false
+                touched: false
             },
             country: {
                 elementType: 'input',
@@ -65,7 +67,7 @@ class ContactData extends Component {
                     required: true
                 },
                 valid: false,
-                touched:false
+                touched: false
             },
 
             email: {
@@ -79,7 +81,7 @@ class ContactData extends Component {
                     required: true
                 },
                 valid: false,
-                touched:false
+                touched: false
             },
 
             deliveryMethod: {
@@ -91,20 +93,22 @@ class ContactData extends Component {
                     ]
                 },
                 value: 'fastest',
-                validation:{},
+                validation: {},
                 valid: true
 
             },
         },
-        formIsValid : false,
-        loading: false
+        formIsValid: false
     }
-
+    // componentDidMount(){
+    //     const contactDataElement = document.querySelector('#Contact')
+    //     contactDataElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    // }
     orderHandler = (e) => {
         e.preventDefault();
 
 
-        this.setState({ loading: true });
+        // this.setState({ loading: true });
         const formData = {};
         for (let formElementIdentifier in this.state.orderForm) {
             formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
@@ -112,33 +116,15 @@ class ContactData extends Component {
         const order = {
             flowers: this.props.bloom,
             price: this.props.price,
-            orderData: formData
+            orderData: formData,
+            userId: this.props.userId
 
         }
-        axios.post('/orders.json', order)
-            .then(resp => {
-                this.setState({ loading: false });
-                this.props.history.push('/');
-            })
-            .catch(error => {
-                this.setState({ loading: false });
-            });
-    }
-    checkValidity(value, rules) {
-      let  isValid = true;
 
-        if (rules.required) {
-            isValid = value.trim() !== '' && isValid
-        }
-        if (rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid
-        }
-        if (rules.maxLength) {
-            isValid = value.length <= rules.maxLength && isValid
-        }
-        return isValid;
+        this.props.onFlowerOrder(order, this.props.token);
 
     }
+
     inputChangeHandler = (e, inputIdentifier) => {
         const updateForm = {
             ...this.state.orderForm
@@ -147,15 +133,15 @@ class ContactData extends Component {
             ...updateForm[inputIdentifier]
         }
         updateFormElement.value = e.target.value;
-        updateFormElement.valid = this.checkValidity(updateFormElement.value, updateFormElement.validation);
+        updateFormElement.valid = checkValidity(updateFormElement.value, updateFormElement.validation);
         updateFormElement.touched = true;
         updateForm[inputIdentifier] = updateFormElement;
 
         let formIsValid = true;
-        for(let inputIdentifier in updateForm){
-            formIsValid= updateForm[inputIdentifier].valid && formIsValid
+        for (let inputIdentifier in updateForm) {
+            formIsValid = updateForm[inputIdentifier].valid && formIsValid
         }
-        this.setState({ orderForm: updateForm, formIsValid:formIsValid });
+        this.setState({ orderForm: updateForm, formIsValid: formIsValid });
     }
     render() {
         const formElementArray = [];
@@ -184,22 +170,37 @@ class ContactData extends Component {
             </form>
         );
 
-        if (this.state.loading) {
+        if (this.props.loading) {
             form = <Spinner />
         }
         return (
-            <div className={classes.ContactData}>
-                <h4 className={classes.Heading}>Enter Your Contact Data..!!!</h4>
-                {form}
+            <div className={classes.ContactContainer}>
+                <div id="Contact" className={classes.ContactData}>
+                    <h4 className={classes.Heading}>Enter Your Contact Data..!!!</h4>
+                    {form}
+                </div>
+
             </div>
+
         );
     }
 
 }
 const mapStateToState = state => {
     return {
-        bloom : state.flowers,
-        price: state.totalPrice
+        bloom: state.flowerValley.flowers,
+        price: state.flowerValley.totalPrice,
+        loading: state.order.loading,
+        token: state.auth.token,
+        userId: state.auth.userId
     }
 }
-export default connect(mapStateToState)(ContactData);
+
+const mapDispatchToProps = dispatch => {
+
+    return {
+        onFlowerOrder: (orderData, token) => dispatch(orderActions.purchaseFlower(orderData, token))
+
+    }
+}
+export default connect(mapStateToState, mapDispatchToProps)(withErrorHandler(ContactData, axios));

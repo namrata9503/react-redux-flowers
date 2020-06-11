@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import FlowerVariety from '../FlowerVarieties/FlowerVariety/FlowerVariety';
 import classes from './Varieties.css';
 import Aux from '../../../hoc/Auxiliary';
 import getData from '../../Bouquet/data';
@@ -22,7 +21,6 @@ class Varieties extends Component {
     }
 
     render() {
-        console.log('Varieties render', this.props.flowers)
 
         return (
 

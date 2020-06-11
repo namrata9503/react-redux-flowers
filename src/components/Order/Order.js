@@ -10,14 +10,12 @@ const order = (props) => {
                 name: flowerName,
                 amount: props.flowers[flowerName]
             })
-            console.log('order for ', flowerName, props.flowers[flowerName] );
 
     }
     let flowerOutput= flowers.map(ig => {
         return <span key={ig.name}
         >{ig.name} ({ig.amount}) </span>
         })
-    console.log('order component :', flowerOutput);
     return (
         <div className={classes.Order}>
             <p className={classes.OrderFlowers}>FLOWERS: {flowerOutput}</p>

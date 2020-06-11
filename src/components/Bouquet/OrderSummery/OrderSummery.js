@@ -24,8 +24,11 @@ const orderSummery = (props) => {
             </ul>
             <p className={[classes.Heading, classes.Center].join(' ')}><strong>    Total Price : {props.price.toFixed(2)}</strong></p>
             <p className={[classes.text,  classes.Center].join(' ')}>Continue to checkout?</p>
+            <div className={classes.Btn}>
             <Button btnType="Danger" clicked= {props.purchaseCanceled}>CANCEL</Button>
             <Button btnType="Success" clicked= { props.purchaseContinued}>CONTINUE</Button>
+            </div>
+          
         </Aux>
     );
 

@@ -12,12 +12,17 @@
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 1px;
-    background-image: linear-gradient(to left, #f5cd78, #4e3706);
+    background-image: linear-gradient(to right, #f5cd78, #4e3706);
     display: inline-block;
     -webkit-background-clip: text;
     color: transparent;
     transition: all .2s;
     margin-bottom: 2rem;
+    height: 10rem;
+    width: 54rem;
+    margin-top: 7rem;
+    transform: translateX(15rem);
+
 }
 .Heading:hover{
     transform: skewY(1deg) skewX(15deg) scale(1.1);

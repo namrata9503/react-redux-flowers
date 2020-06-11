@@ -1,5 +1,13 @@
 .Content{
-    grid-column: center-start / center-end;
+    grid-column: full-start / full-end;
     grid-row: 2/-1;
     /* margin-top: 1.6rem; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+}
+
+.Content ~ .Auth {
+    background-color: pink;
+
 }

@@ -1,3 +1,11 @@
+.ContactContainer{
+    margin:0;
+    padding:0;
+    grid-row: 2/-1;
+    margin-top: 88rem;
+
+}
+
 .ContactData{
     width: 80%;
     text-align: center;
@@ -6,12 +14,16 @@
     box-shadow: 0 2px 3px #ccc;
     padding: 10px;
     border: 1px solid #eee;
+    grid-row: 2/-1;
+
 }
 
 
 @media(min-width:600px){
     .ContactData{
         width: 500px;
+        grid-row: 2/-1;
+
     }
 }
 

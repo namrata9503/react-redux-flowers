@@ -1,9 +1,10 @@
 .flowers{
     grid-column: center-start / center-end;
-    margin: 4rem 0;
+    margin: 8rem 5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 7rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 5rem;
+    overflow: auto;
     
 }
 .select{

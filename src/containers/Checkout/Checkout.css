@@ -1,15 +1,18 @@
 .Checkout{
-    background-image: url(../../assets/images/lady3.jfif);
-    /* background-size: cover; */
-    height: 85%;
-    background-repeat: no-repeat;
-    background-position: 51% 41%;
+    display: grid;
+    /* grid-column: center-start / center-end; */
+    grid-template-rows: repeat(2, minmax(60rem, 1fr));;
+    
+    /* overflow: auto; */
+    height: 54rem;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 850px) {
     .Checkout{
         background-image:none;
         
     }
 
 }
+
+

@@ -1,40 +1,30 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Auxiliary';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import Bouquet from '../../components/Bouquet/Bouquet';
-import Varieties from '../../components/Bouquet/FlowerVarieties/Varieties';
 
 import FlowerControls from '../../components/Bouquet/FlowerControls/FlowerControls';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import Modal from '../../components/UI/Modal/Modal';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import OrderSummery from '../../components/Bouquet/OrderSummery/OrderSummery';
-import Gallery from '../../components/Bouquet/FlowersGallery/Gallery';
 import axios from '../../axios-orders';
-import FlowerVariety from '../../components/Bouquet/FlowerVarieties/FlowerVariety/FlowerVariety';
-import FlowerVarieties from '../../components/Bouquet/FlowerVarieties/FlowerVarieties';
-import * as actionTypes from '../../store/actions';
+
+import * as flowerValleyActions from '../../store/actions/index';
 
 
 
 class FlowersValley extends Component {
 
     state = {
-        purchasing: false,
-        loading: false,
-        error: false
+        purchasing: false
 
     }
     componentDidMount() {
-        console.log(this.props);
-        // axios.get('https://flowers-valley.firebaseio.com/flowers.json')
-        //     .then(resp => {
-        //         this.setState({ flowers: resp.data });
-        //     })
-        //     .catch(error => {
-        //         this.setState({ error: true });
-        //     });
+
+        this.props.onInitFlowers();
+
     }
 
 
@@ -44,14 +34,13 @@ class FlowersValley extends Component {
                 return flowers[igKey];
             })
             .reduce((sum, el) => {
-                console.log('el ' + el);
                 return sum + el
             }, 0);
-        return  sum > 0 ;
+        return sum > 0;
 
     }
 
-   
+
     // Create handleChange here and pass it to Bouquet as props
     // Use setState instead of mutating state
     handleChange = e => {
@@ -62,15 +51,22 @@ class FlowersValley extends Component {
         //  this.setState({ [e.target.value]: e.target.value })
 
     };
-   
+
     purchaseHandler = () => {
-        this.setState({ purchasing: true });
+        if (this.props.isAuthenticated) {
+            this.setState({ purchasing: true });
+
+        } else {
+            this.props.onSetAuthRedirectPath('/checkout');
+            this.props.history.push('/auth');
+        }
     }
     purchaseContinueHandler = () => {
-   
 
 
+         this.props.onInitPurchase();
         this.props.history.push('/checkout');
+
 
     }
     purchaseCancelHandler = () => {
@@ -79,7 +75,6 @@ class FlowersValley extends Component {
     }
 
     render() {
-       // console.log("render : ", this.state.flowers);
 
 
         const disableInfo = {
@@ -91,38 +86,28 @@ class FlowersValley extends Component {
 
         let orderSummery = null;
 
-        let bouquet = this.state.error ? <p style={{ fontSize: '3rem', textAlign: 'center', fontWeight: 'bold' }}>
+        let bouquet = this.props.error ? <p style={{ fontSize: '3rem', textAlign: 'center', fontWeight: 'bold' }}>
             Flowers cannot be loaded ..!!</p> : <Spinner />;
         if (this.props.bloom) {
             bouquet = (
                 <Aux>
                     <Bouquet flowers={this.props.bloom}
-                     varietyAdded={this.props.onBloomAdded}
-                     handleChange={this.handleChange}
-                     varietyRemoved={this.props.onBloomRemoved}
-                     disabled={disableInfo} />
+                        varietyAdded={this.props.onBloomAdded}
+                        handleChange={this.handleChange}
+                        varietyRemoved={this.props.onBloomRemoved}
+                        isAuth={this.props.isAuthenticated}
 
-                    {/* <FlowerVariety
+                        disabled={disableInfo} />
 
-                       
-                    >
-                        <FlowerVarieties
-                        flowers={this.state.flowers}
-                        />
-                        <Varieties
-                         varietyAdded={this.addFlowerHandler}
-                         handleChange={this.handleChange}
-                         varietyRemoved={this.removeFlowersHandler}
-                         disabled={disableInfo}
-                        />
-                    </FlowerVariety> */}
+
 
                     {/* make other component and put  + - buttons or count price  in that component */}
                     <FlowerControls
-                      
+
                         disabled={disableInfo}
                         purchasable={this.updatePurchaseState(this.props.bloom)}
                         ordered={this.purchaseHandler}
+                        isAuth={this.props.isAuthenticated}
                         price={this.props.price} />
                 </Aux>
             );
@@ -131,9 +116,7 @@ class FlowersValley extends Component {
                 purchaseCanceled={this.purchaseCancelHandler}
                 purchaseContinued={this.purchaseContinueHandler} />;
         }
-        if (this.state.loading) {
-            orderSummery = <Spinner />
-        }
+
 
         return (
             <Aux>
@@ -150,18 +133,23 @@ class FlowersValley extends Component {
 
 const mapStateToProps = state => {
 
-    return{
-        bloom : state.flowers,
-        price: state.totalPrice
+    return {
+        bloom: state.flowerValley.flowers,
+        price: state.flowerValley.totalPrice,
+        error: state.flowerValley.error,
+        isAuthenticated: state.auth.token !== null
 
     }
 
 }
 const maDispatchToProps = dispatch => {
-    return{
-        onBloomAdded : (flName) => dispatch({type: actionTypes.ADD_FLOWER, flowerName: flName}),
-        onBloomRemoved : (flName) => dispatch({type: actionTypes.REMOVE_FLOWER, flowerName: flName})
+    return {
+        onBloomAdded: (flName) => dispatch(flowerValleyActions.addIngredient(flName)),
+        onBloomRemoved: (flName) => dispatch(flowerValleyActions.removeIngredient(flName)),
+        onInitFlowers: () => dispatch(flowerValleyActions.initFlowers()),
+        onInitPurchase: () => dispatch(flowerValleyActions.purchaseInit()),
+        onSetAuthRedirectPath: (path) => dispatch(flowerValleyActions.setAuthRedirectPath(path))
 
     }
 }
-export default connect(mapStateToProps,maDispatchToProps)(withErrorHandler(FlowersValley, axios));
+export default connect(mapStateToProps, maDispatchToProps)(withErrorHandler(FlowersValley, axios));

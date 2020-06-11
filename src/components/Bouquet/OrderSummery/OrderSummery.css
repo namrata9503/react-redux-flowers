@@ -36,3 +36,8 @@
     text-align: center;
     justify-content: center;
 }
+.Btn{
+  text-align: center;
+  margin: 1.2rem auto;
+  justify-content: space-between;
+}

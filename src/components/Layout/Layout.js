@@ -5,6 +5,7 @@ import Toolbar from '../Navigation/Toolbar/Toolbar';
 import Sidebar from '../Navigation/Sidebar/Sidebar';
 
 import classes from './Layout.css';
+import { connect } from 'react-redux';
 
 class Layout extends Component {
 
@@ -23,8 +24,12 @@ class Layout extends Component {
     render() {
         return (
             <Aux>
-                <Toolbar sidebarToggleClicked={this.sidebarToggleHandler} />
+                <Toolbar
+                    isAuth={this.props.isAuthenticated}
+                    sidebarToggleClicked={this.sidebarToggleHandler} />
                 <Sidebar open={this.state.showSidebar}
+                    isAuth={this.props.isAuthenticated}
+
                     closed={this.sidebarClosedHandler} />
                 <main className={classes.Content}>
                     {this.props.children}
@@ -35,4 +40,10 @@ class Layout extends Component {
     }
 }
 
-export default Layout;
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth.token !== null
+    }
+}
+
+export default connect(mapStateToProps)(Layout);
