@@ -1,8 +1,9 @@
 .full{
     grid-column: 1 / -1;
-    height: 100vh;
+    height: 94vh;
     position: relative;
     padding:  0;
+    overflow: auto;
 }
 .bgvideo {
     position: absolute;
@@ -22,7 +23,7 @@
     }
 
 .Upper{
-    background-image: linear-gradient(to right,  rgb(247, 224, 197), rgb(243, 179, 83) );
+    background-image: linear-gradient(to right,  rgb(236, 224, 217), rgb(238, 218, 192) );
     height: 15rem;
     box-sizing: border-box;
     position: relative;
@@ -51,7 +52,7 @@
     -ms-flex-item-align: center;
     align-self: center;
     padding-right: 2rem;
-    color: rgb(99, 61, 5);
+    color: rgb(68, 43, 1);
     line-height: 2.3rem;
 }
 .Upper p span{
@@ -121,4 +122,9 @@
     font-size: 1.8rem;
     font-weight: 700;
     font-style: italic;
+}
+
+.Auth > button{
+    border: none;
+    width: 20rem;
 }

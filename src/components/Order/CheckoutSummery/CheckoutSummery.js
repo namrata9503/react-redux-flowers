@@ -28,7 +28,7 @@ class CheckoutSummery extends Component {
     render() {
         return (
             <div className={classes.CheckoutSummery}>
-                <h1 className={classes.Heading}>We hope you will like This BOUQUET..!!</h1>
+                <h1 id="Head" className={classes.Heading}>We hope you will like This BOUQUET..!!</h1>
                 <div className={classes.ContainerBtn}>
                     <Button
                         clicked={this.props.cancelCheckout} btnType="Danger">CANCEL</Button>
@@ -44,7 +44,7 @@ class CheckoutSummery extends Component {
                             duration={500}
                             onClick={this.props.continueCheckout}
 
-                        >Double Click To &rarr; Continue</Link>
+                        >Double Click To &rarr; Fill Contact Details</Link>
                     </Button>
                 </div>
 
@@ -60,7 +60,23 @@ class CheckoutSummery extends Component {
                     ))}
 
                 </div>
-              
+                <div className={classes.Up}
+                >
+                    {/* <span>&#8593;</span> */}
+
+                    <Link
+                        activeClass="active"
+                        to="Head"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+
+                    ><span>&#8593;</span>
+                        {/* <i  >&#xf102;</i> */}
+
+                    </Link>
+                </div>
             </div>
         );
     }

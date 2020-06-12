@@ -2,7 +2,8 @@
     margin:0;
     padding:0;
     grid-row: 2/-1;
-    margin-top: 88rem;
+    z-index: 100;
+    /* margin-top: 88rem; */
 
 }
 
@@ -15,6 +16,9 @@
     padding: 10px;
     border: 1px solid #eee;
     grid-row: 2/-1;
+    z-index: 100;
+    background-color: whitesmoke;
+
 
 }
 
@@ -23,6 +27,8 @@
     .ContactData{
         width: 500px;
         grid-row: 2/-1;
+        z-index: 100;
+        background-color: whitesmoke;
 
     }
 }

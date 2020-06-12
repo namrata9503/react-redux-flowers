@@ -9,7 +9,8 @@
     background-image: url(../../../assets/images/lady3.jfif);
    
     background-repeat: no-repeat;
-    background-position: 85% 54%;
+    background-position: 85% 24%;
+    height: 180vh;
     
 }
 .Heading{
@@ -228,4 +229,46 @@ height: 175vh;
     padding-top: 0 !important;
 
 
+}
+
+.Up{
+   
+    border: 1px solid transparent;
+    border-radius: 100%;
+    background-color: transparent;
+    font-weight: 900;
+    width: 6rem;
+    height: 6rem;
+    position: fixed;
+    z-index: 0 !important;
+    cursor: pointer;
+
+    right: 2rem;
+    -webkit-animation: scrollTop .5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);;
+    -moz-animation: scrollTop .5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);;
+    -ms-animation: scrollTop .5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);;
+    animation: scrollTop .5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);;
+    animation: scrollTop .5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);;
+    bottom: 2rem;
+}
+
+.Up span{
+    font-size: 6rem;
+    color: rgb(114, 73, 10);
+    font-weight: 900;
+    margin-top: 10px;
+   
+
+}
+.Up:hover{
+    transform: scale(1.5);
+    animation: none;
+}
+@keyframes scrollTop {
+    to {
+        transform: translateY(8px);
+    }
+    from {
+        transform: translateY(-9px);
+    }
 }
