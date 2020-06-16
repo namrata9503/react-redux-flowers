@@ -3,11 +3,7 @@
     grid-row: 2/-1;
     /* margin-top: 1.6rem; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns:  repeat(auto-fit, minmax(10rem, 1fr));
 
 }
 
-.Content ~ .Auth {
-    background-color: pink;
-
-}

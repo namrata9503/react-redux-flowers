@@ -12,6 +12,7 @@ import OrderSummery from '../../components/Bouquet/OrderSummery/OrderSummery';
 import axios from '../../axios-orders';
 
 import * as flowerValleyActions from '../../store/actions/index';
+import Slider from '../../components/UI/Slider/Slider';
 
 
 
@@ -64,7 +65,7 @@ class FlowersValley extends Component {
     purchaseContinueHandler = () => {
 
 
-         this.props.onInitPurchase();
+        this.props.onInitPurchase();
         this.props.history.push('/checkout');
 
 
@@ -91,6 +92,7 @@ class FlowersValley extends Component {
         if (this.props.bloom) {
             bouquet = (
                 <Aux>
+
                     <Bouquet flowers={this.props.bloom}
                         varietyAdded={this.props.onBloomAdded}
                         handleChange={this.handleChange}
@@ -109,6 +111,7 @@ class FlowersValley extends Component {
                         ordered={this.purchaseHandler}
                         isAuth={this.props.isAuthenticated}
                         price={this.props.price} />
+
                 </Aux>
             );
             orderSummery = <OrderSummery flowers={this.props.bloom}
@@ -120,10 +123,11 @@ class FlowersValley extends Component {
 
         return (
             <Aux>
+                <Slider />
+
                 <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
                     {orderSummery}
                 </Modal>
-
                 {bouquet}
             </Aux>
         );
