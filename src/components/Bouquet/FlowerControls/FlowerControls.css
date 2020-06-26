@@ -10,6 +10,7 @@
     border-radius: 15px;
     margin-bottom: 4rem;
     grid-column: center-start/center-end;
+    height: 25rem;
 }
 .Orderdata{
     padding: 2rem 0;
@@ -53,7 +54,6 @@ text-align: center;
     font-size: 1.8rem;
     padding: 15px 30px;
 
-    font-size: 1.9rem;
     font-weight: 300;
     border: none;
     text-transform: uppercase;
@@ -61,11 +61,40 @@ text-align: center;
     background-image: linear-gradient(to right, #996a05, #1a1201);
     color: #fff;
     overflow: hidden;
-}
+    height: 10rem;
 
-.OrderButton:hover, .OrderButton:active {
+}
+.OrderButton:hover{
     background-image: linear-gradient(to right, #966909, #3d2b05);
     color: #ccc;
+    position: relative;
+
+}
+ .OrderButton:active {
+    background-image: linear-gradient(to right, #966909, #3d2b05);
+    color: #ccc;
+}
+
+
+.OrderButton span{
+    display: none;
+}
+.OrderButton:hover span{
+    border: #666 2px dotted;
+    padding: 5px 20px 5px 5px;
+    display: block;
+    z-index: 100;
+    background: #e3e3e3;
+    left: 12px;
+    margin: 15px;
+    width: 165px;
+    position: absolute;
+    top: 5px;
+    text-decoration: none;
+    color: #3d2b05;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    text-transform: capitalize;
 }
 .OrderButton:active {
     transform: translateY(2px);
@@ -82,8 +111,11 @@ text-align: center;
     animation: enable 0.3s linear;
     color: whitesmoke;
 
-}
 
+}
+.OrderButton:not(:disabled) span{
+    display: none;
+}
 @keyframes enable {
     0% {
         transform: scale(1);
